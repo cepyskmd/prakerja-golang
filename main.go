@@ -10,6 +10,7 @@ import (
 var DB *gorm.DB
 
 func main() {
+	configs.LoadEnv()
 	configs.ConnectDatabase()
 	e := routes.Init()
 	e.Start(":8000")
